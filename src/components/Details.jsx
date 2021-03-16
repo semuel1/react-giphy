@@ -20,32 +20,18 @@ const Details = props => {
     let result = <></>
     if (Object.keys(searchResult).length !== 0) {
         result = (
-            <div className="row">
-                <div className="col-md-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <img
-                                src={searchResult.images.fixed_height.url}
-                                alt={searchResult}
-                                className="img img-fluid"
-                                width={searchResult.images.fixed_height.width}
-                                height={searchResult.images.fixed_height.height}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-body">
-                            <h4>{searchResult.title}</h4>
-                            <ul className="list-group">
-                                <li className="list-group-item">Rating: {searchResult.rating}</li>
-                                <li className="list-group-item">Source: <a href={searchResult.source} target="_blank">View Source</a></li>
-                                <li className="list-group-item">Created: {searchResult.import_datetime}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <img
+                    src={searchResult.images.fixed_height.url}
+                    alt={searchResult}
+                    width={searchResult.images.fixed_height.width}
+                    height={searchResult.images.fixed_height.height}
+                />
+                <ul>
+                    <li>Rating: {searchResult.rating}</li>
+                    <li>Source: <a href={searchResult.source} target="_blank">View Source</a></li>
+                    <li>Created: {searchResult.import_datetime}</li>
+                </ul>
             </div>
         )
     } else {
@@ -54,7 +40,7 @@ const Details = props => {
         )
     }
     return (
-        <div className="container">
+        <div>
             {result}
         </div>
     )
